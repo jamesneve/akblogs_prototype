@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :post do
-    title "MyString"
-    image "MyString"
-    content "MyText"
-    site_id 1
+    title "No3b Concert"
+    image "http://no3b.com/concert.png"
+    content "There was a concert last night. Mii-chan did a backflip."
+    site
   end
 end
