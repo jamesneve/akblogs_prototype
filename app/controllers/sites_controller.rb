@@ -18,4 +18,10 @@ class SitesController < ApplicationController
   		render 'new'
   	end
   end
+
+  def bookmarklet
+    respond_to do |format|
+      format.js { render 'bookmarklet' }
+    end
+  end
 end
