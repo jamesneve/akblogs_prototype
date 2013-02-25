@@ -1,0 +1,44 @@
+({
+  addURL: function(aURL) {
+    var target, title, url;
+    title = encodeURIComponent(document.title);
+    url = encodeURIComponent(document.location);
+    target = "http://localhost:3000/sites/new?name=" + title + "&url=" + url + "&rss=" + encodeURIComponent(aURL);
+    return location.href = target;
+  },
+  formatURL: function(feedURL, aDocument) {
+    var location, newURL, splitURL;
+    newURL = feedURL;
+    location = aDocument.location;
+    if (feedURL.indexOf("/") !== 0) {
+      splitURL = location.pathname.split("/");
+      splitURL[splitURL.length - 1] = feedURL;
+      newURL = splitURL.join("/");
+    }
+    return location.protocol + "//" + location.hostname + newURL;
+  },
+  checkForFeeds: function() {
+    var feedExists, feedURL, i, link, linkRel, linkType, links;
+    feedExists = false;
+    links = document.getElementsByTagName("link");
+    link = void 0;
+    i = 0;
+    while (link = links[i]) {
+      linkType = link.getAttribute("type");
+      linkRel = link.getAttribute("rel");
+      if (linkType && linkType.match(/[\+\/]xml$/) && linkRel && linkRel === "alternate") {
+        feedURL = link.getAttribute("href");
+        if (feedURL.indexOf("http") !== 0) {
+          feedURL = this.formatURL(feedURL, document);
+        }
+        this.addURL(feedURL);
+        feedExists = true;
+        break;
+      }
+      i++;
+    }
+    if (!feedExists) {
+      return this.addURL("");
+    }
+  }
+}).checkForFeeds();
