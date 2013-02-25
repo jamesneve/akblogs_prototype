@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
+gem 'bootstrap-sass'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,12 +10,14 @@ group :development, :test do
 	gem 'sqlite3'
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'
+	gem 'capybara'
 end
 
 group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller'
 	gem 'meta_request'
+	gem 'annotate'
 end
 
 group :assets do
@@ -24,10 +27,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
-group :test do
-	gem 'capybara'
-end
 
 group :production do
 	gem 'pg'

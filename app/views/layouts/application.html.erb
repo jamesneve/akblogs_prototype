@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FieryHoop</title>
+  <title>AKBlogs | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="container">
+		<% flash.each do |key, value| %>
+			<div class="alert alert-<%= key %>"><%= value %></div>
+		<% end %>
 
-<%= yield %>
+		<%= yield %>
+
+		<%= debug(params) if Rails.env.development? %>
+	</div>
 
 </body>
 </html>
