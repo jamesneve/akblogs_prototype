@@ -1,19 +1,21 @@
-class Site < ActiveRecord::Base
-  attr_accessible :name, :rss, :url
-
-  validates :name, presence: true, length: { maximum: 50 }
-  validates :rss, presence: true
-  validates :url, presence: true
-end
 # == Schema Information
 #
 # Table name: sites
 #
-#  id         :integer         not null, primary key
+#  id         :integer          not null, primary key
 #  name       :string(255)
 #  url        :string(255)
 #  rss        :string(255)
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
+class Site < ActiveRecord::Base
+  attr_accessible :name, :rss, :url
+
+  validates :name, presence: true, length: { maximum: 100 }
+  validates :rss, presence: true
+  validates :url, presence: true
+
+  has_many :posts
+end

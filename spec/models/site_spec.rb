@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: sites
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  url        :string(255)
+#  rss        :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Site do
@@ -30,21 +42,9 @@ describe Site do
 		it { should_not be_valid }
 	end
 
-	describe "Site name should not be longer than 50 characters" do
-		before { @site.name = "a" * 51 }
+	describe "Site name should not be longer than 100 characters" do
+		before { @site.name = "a" * 101 }
 
 		it { should_not be_valid }
 	end
 end
-# == Schema Information
-#
-# Table name: sites
-#
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  url        :string(255)
-#  rss        :string(255)
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#
-

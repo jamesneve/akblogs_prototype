@@ -3,6 +3,8 @@ FieryHoop::Application.routes.draw do
     get :bookmarklet, on: :collection
   end
 
+  root to: 'sites#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
