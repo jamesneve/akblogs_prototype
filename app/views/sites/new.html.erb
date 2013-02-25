@@ -1,5 +1,8 @@
 <% provide(:title, 'Add New Site') %>
+
 <h2>Add Site</h2>
+
+<%= button_to "Update feeds!", {controller: :posts, action: :updatefeeds} , method: :put %>
 
 <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://<%= "#{request.host}:#{request.port}" %>/sites/bookmarklet';})();" onclick="alert('Drag this link to your bookmarks bar to create a bookmarklet'); return false;">Bookmarklet</a>
 

@@ -14,7 +14,9 @@ require 'spec_helper'
 
 describe Site do
   
-	before { @site = Site.new(name: "Example blog", url: "http://www.example.com", rss: "http://www.example.com/feed" )}
+	before { @site = Site.new(name: "Example blog", 
+		url: "http://www.example.com", 
+		rss: "http://www.example.com/feed" )}
 
 	subject { @site }
 
@@ -38,6 +40,17 @@ describe Site do
 
 	describe "Site should have feed" do
 		before { @site.rss = " " }
+
+		it { should_not be_valid }
+	end
+
+	describe "Feed should be unique" do
+		before do
+			site2 = Site.new(name: "Example 2", 
+				url: "http://www.example2.com",
+				rss: "http://www.example.com/feed")
+			site2.save
+		end
 
 		it { should_not be_valid }
 	end

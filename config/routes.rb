@@ -3,7 +3,9 @@ FieryHoop::Application.routes.draw do
     get :bookmarklet, on: :collection
   end
 
-  resources :posts
+  resources :posts do
+    put :updatefeeds, on: :collection
+  end
 
   root to: 'posts#index'
 

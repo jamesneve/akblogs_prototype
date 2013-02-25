@@ -3,9 +3,11 @@
     var target, title, url;
     title = encodeURIComponent(document.title);
     url = encodeURIComponent(document.location);
+
     target = "http://agile-depths-6394.herokuapp.com//sites/new?name=" + title + "&url=" + url + "&rss=" + encodeURIComponent(aURL);
     return location.href = target;
   },
+
   formatURL: function(feedURL, aDocument) {
     var location, newURL, splitURL;
     newURL = feedURL;
@@ -17,12 +19,14 @@
     }
     return location.protocol + "//" + location.hostname + newURL;
   },
+
   checkForFeeds: function() {
     var feedExists, feedURL, i, link, linkRel, linkType, links;
     feedExists = false;
     links = document.getElementsByTagName("link");
     link = void 0;
     i = 0;
+
     while (link = links[i]) {
       linkType = link.getAttribute("type");
       linkRel = link.getAttribute("rel");

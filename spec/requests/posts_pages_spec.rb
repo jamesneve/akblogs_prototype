@@ -12,4 +12,11 @@ describe "Post pages" do
 		it { should have_content(post.title) }
 	end
 
+	describe "show page" do
+		let!(:post) { FactoryGirl.create(:post, site: site) }
+		before { visit post_path(post) }
+
+		it { should have_content(post.title) }
+	end
+
 end

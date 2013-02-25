@@ -14,7 +14,7 @@ class Site < ActiveRecord::Base
   attr_accessible :name, :rss, :url
 
   validates :name, presence: true, length: { maximum: 100 }
-  validates :rss, presence: true
+  validates :rss, presence: true, uniqueness: true
   validates :url, presence: true
 
   has_many :posts

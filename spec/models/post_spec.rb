@@ -2,13 +2,14 @@
 #
 # Table name: posts
 #
-#  id         :integer          not null, primary key
-#  title      :string(255)
-#  image      :string(255)
-#  content    :text
-#  site_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :integer          not null, primary key
+#  title        :string(255)
+#  image        :string(255)
+#  content      :text
+#  site_id      :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  published_on :datetime
 #
 
 require 'spec_helper'

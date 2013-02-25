@@ -33,7 +33,7 @@ describe "Site pages" do
 			before do
 				fill_in "Name", with: "Example blog"
 				fill_in "URL", with: "www.example.com"
-				fill_in "RSS Feed", with: "www.example.com/feed"
+				fill_in "RSS feed", with: "www.example.com/feed"
 			end
 
 			it "should create a user" do
