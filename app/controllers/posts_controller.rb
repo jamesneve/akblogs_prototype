@@ -23,7 +23,7 @@ class PostsController < ApplicationController
 	  				content = entry.summary if content.blank?
 
 	  				newPost = site.posts.build(title: entry.title,
-	  						image: "rails.png",
+	  						image: "http://i104.photobucket.com/albums/m188/Neve_itsovernow/file_zps904db52b.jpg",
 	  						content: content,
 	  						published_on: entry.published)
 	  				updateSuccessful = false unless newPost.save

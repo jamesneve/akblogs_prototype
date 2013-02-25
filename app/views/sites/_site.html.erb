@@ -1,4 +1,5 @@
-<p>
-	<strong><%= site.name %></strong><br />
-	<%= site.url %>
-</p>
+<div class="site">
+	<div class="site-name"><%= site.name %></div>
+	<div class="site-url"><strong>URL:</strong> <%= link_to site.url %></div>
+	<div class="rss-feed"><strong>RSS feed:</strong> <%= link_to site.rss %></div>
+</div>

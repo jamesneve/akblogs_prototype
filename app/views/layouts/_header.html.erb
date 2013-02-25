@@ -2,9 +2,17 @@
 	<div class="navbar-inner">
 		<div class="container">
 			<ul class="nav">
-				<li><%= link_to "Blog Index", sites_path %></li>
+				<li><%= link_to "Site Index", sites_path %></li>
 				<li><%= link_to "Management", new_site_path %></li>
+			</ul>
+			<ul class="nav pull-right">
+				<li><%= image_tag "pink-rss.png", class: "topbar-icon" %></li>
+				<li><%= image_tag "pink-twitter.png", class: "topbar-icon" %></li>
+				<li><%= image_tag "pink-facebook.png", class: "topbar-icon" %>
 			</ul>
 		</div>
 	</div>
 </header>
+<div class="container" id="banner-container">
+	<%= link_to image_tag("banner-2.jpg", class: "banner"), posts_path %>
+</div>
