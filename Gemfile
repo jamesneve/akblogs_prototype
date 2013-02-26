@@ -2,12 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
 gem 'jquery-rails'
-gem 'bootstrap-sass'					# CSS Library
-gem 'feedzirra'							# Parsing RSS Feeds
-gem 'bootstrap-will_paginate'			# Pagination
-gem 'rmagick'							# Image Processing
-gem 'carrierwave'						# Image Uploading
-gem 'fog'								# Amazon S3 Interface
+gem 'bootstrap-sass'					# CSS library
+gem 'feedzirra'							# Parsing RSS feeds
+gem 'will_paginate'						# Pagination
+gem 'rmagick'							# Image processing
+gem 'carrierwave'						# Image uploading
+gem 'fog'								# Amazon S3 interface
 gem 'fastimage'							# Get image sizes
 
 group :development, :test do
@@ -18,10 +18,10 @@ group :development, :test do
 end
 
 group :development do
-	gem 'better_errors'					# Better Error Pages
-	gem 'binding_of_caller'				# Better Error Pages
-	gem 'meta_request'					# For Chrome Extension
-	gem 'annotate'						# Annotate Models
+	gem 'better_errors'					# Better error pages
+	gem 'binding_of_caller'				# Better error pages
+	gem 'meta_request'					# For RailsPanel
+	gem 'annotate'						# Annotate models
 end
 
 group :assets do

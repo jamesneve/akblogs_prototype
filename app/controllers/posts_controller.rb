@@ -42,6 +42,7 @@ class PostsController < ApplicationController
                   author: entry.author,
                   published_on: entry.published)
             end
+            
 	  				updateSuccessful = false unless newPost.save
 	  			end
 	  		end

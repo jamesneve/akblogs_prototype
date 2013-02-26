@@ -64,7 +64,8 @@ a {
 	background-color: #ffffff;
 	border: 4px solid #dfdfdf;
 	border-radius: 20px;
-	-moz-border-radius:20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
 	padding: 10px
 }
 
@@ -86,4 +87,42 @@ a {
 .site-name {
 	font-weight: bold;
 	font-size: 18px;
+}
+
+/* Pagination */
+
+.pagination {
+	text-align: center;
+	padding: 16px;
+	cursor: default; 
+}
+
+.pagination a, .pagination span {
+	padding: 3px 4px; 
+}
+
+.pagination .disabled {
+	color: #aaaaaa; 
+}
+
+.pagination .current {
+	font-style: normal;
+	font-weight: bold;
+	background-color: #b668cc;
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	line-height: 1.5;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	border-radius: 16px;
+}
+
+.pagination a {
+	text-decoration: none;
+	color: black; 
+}
+
+.pagination a:hover, .pagination a:focus {
+	font-weight: bold; 
 }
