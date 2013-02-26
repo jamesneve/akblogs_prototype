@@ -11,6 +11,7 @@
 #  published_on :datetime
 #  entry_url    :string(255)
 #  content      :text
+#  author       :string(255)
 #
 
 require 'spec_helper'

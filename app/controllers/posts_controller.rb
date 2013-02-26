@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  respond_to :html, :xml
+  respond_to :html, :xml, :atom
 
   def index
   	@posts = Post.paginate(per_page: 10, page: params[:page]).order('published_on DESC')
@@ -25,6 +25,7 @@ class PostsController < ApplicationController
 	  						remote_image_url: image_url,
 	  						content: content,
                 entry_url: entry.url,
+                author: entry.author,
 	  						published_on: entry.published)
 	  				updateSuccessful = false unless newPost.save
 	  			end

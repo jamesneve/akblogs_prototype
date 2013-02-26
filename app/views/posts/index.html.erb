@@ -1,3 +1,4 @@
+<%= content_for :head, auto_discovery_link_tag(:atom, posts_url(format: "atom")) %>
 <% provide(:title, "Posts") %>
 
 <div class="container" id="main-container">

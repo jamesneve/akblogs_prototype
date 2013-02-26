@@ -1,5 +1,8 @@
+<% url = (site.url.start_with?('http') ? site.url : ("http://" + site.url)) %>
+<% feed = (site.rss.start_with?('http') ? site.rss : ("http://" + site.rss)) %>
+
 <div class="site">
 	<div class="site-name"><%= site.name %></div>
-	<div class="site-url"><strong>URL:</strong> <%= link_to site.url %></div>
-	<div class="rss-feed"><strong>RSS feed:</strong> <%= link_to site.rss %></div>
+	<div class="site-url"><strong>URL:</strong> <%= link_to url, url %></div>
+	<div class="rss-feed"><strong>RSS feed:</strong> <%= link_to site.rss, site.rss %></div>
 </div>

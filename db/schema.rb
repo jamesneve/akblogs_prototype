@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130226081541) do
+ActiveRecord::Schema.define(:version => 20130226091755) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130226081541) do
     t.datetime "published_on"
     t.string   "entry_url"
     t.text     "content"
+    t.string   "author"
   end
 
   add_index "posts", ["published_on"], :name => "index_posts_on_published_on"
