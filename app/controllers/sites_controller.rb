@@ -6,7 +6,8 @@ class SitesController < ApplicationController
   end
 
   def index
-  	respond_with(@sites = Site.all)
+    @sites = Site.paginate(per_page: 10, page: params[:page])
+  	respond_with @site
   end
 
   def create

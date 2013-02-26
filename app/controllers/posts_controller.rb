@@ -22,7 +22,7 @@ class PostsController < ApplicationController
             images = Nokogiri::HTML(content).css('img').map{ |i| i['src'] }
             images.each do |image|
               dim = FastImage.size(image)
-              if dim[0] >= 150 && dim[1] >= 150
+              if dim && dim[0] >= 150 && dim[1] >= 150
                 image_url = image
                 break
               end

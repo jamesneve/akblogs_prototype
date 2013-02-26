@@ -11,9 +11,9 @@
 			<%= link_to post.title, post.entry_url, target: '_blank' %><br />
 		</div>
 		<div class="postsummary">
-			<%= (Nokogiri::HTML(post.content).xpath("//text()").to_s).truncate(30) %>
+			<%= (Nokogiri::HTML(post.content).xpath("//text()").to_s).truncate(60) %>
 		</div>
 		<span class="postdate-published"><%= post.published_on.strftime('%a %d/%m') %></span>
-		<span class="postauthor"><%= post.site.name.truncate(10) %></span>
+		<span class="postauthor"><%= post.site.name.truncate(20) %></span>
 	</div>
 </div>
