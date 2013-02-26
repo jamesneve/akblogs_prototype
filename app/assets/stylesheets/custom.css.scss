@@ -9,8 +9,20 @@
 	padding: 10px;
 }
 
+@mixin mini-header {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+@mixin management-page-button {
+	display: block;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+
 body {
 	padding-top: 60px;
+	color: #555555;
 }
 
 /* Typography */
@@ -29,12 +41,17 @@ a {
 	color: rgb(219, 54, 219);
 }
 
+/* Form input */
+
+.standard-input {
+	margin-left: 15px;
+}
+
 /* Header */
 
 .banner {
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 }
 
 .topbar-icon {
@@ -120,7 +137,7 @@ a {
 }
 
 .postsummary {
-	color: #888888;
+	color: #777777;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
@@ -147,18 +164,39 @@ a {
 	@include pretty-container;
 	float: left;
 	width: 400px;
+	height: 400px;
 }
 
 #bookmarklet-container {
 	@include pretty-container;
 	float: right;
 	width: 300px;
+	height: 181px;
+	text-align: center;
+	margin-bottom: 10px;
 }
 
 #update-feeds-container {
 	@include pretty-container;
+	height: 181px;
 	float: right;
 	width: 300px;
+}
+
+#site-submit-button {
+	@include management-page-button;
+}
+
+#update-feeds-button {
+	@include management-page-button;
+}
+
+#bookmarklet-header { 
+	@include mini-header;
+}
+
+#update-feeds-header {
+	@include mini-header;
 }
 
 /* Pagination */

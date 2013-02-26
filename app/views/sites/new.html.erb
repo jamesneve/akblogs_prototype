@@ -10,10 +10,16 @@
 	</div>
 
 	<div class="container", id="bookmarklet-container">
-		<a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://<%= "#{request.host}:#{request.port}" %>/sites/bookmarklet';})();" onclick="alert('Drag this link to your bookmarks bar to create a bookmarklet'); return false;">Bookmarklet</a>
+		<%= image_tag "bookmarklet-header.png", class: "header-txt-image", id: "bookmarklet-header" %>
+		Drag the link below into your bookmarks bar, and use it to help you add the girls' blogs to the site.<br /><br />
+		<i class="icon-star"></i> 
+		<a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://<%= "#{request.host}:#{request.port}" %>/sites/bookmarklet';})();" onclick="alert('Drag this link to your bookmarks bar to create a bookmarklet'); return false;" id="bookmarklet-link">Drag Me!</a> 
+		<i class="icon-star"></i>
 	</div>
 
 	<div class="container", id="update-feeds-container">
-		<%= button_to "Update feeds!", { controller: :posts, action: :updatefeeds } , method: :put %>
+		<%= image_tag "update-feeds-header.png", class: "header-txt-image", id: "update-feeds-header" %>
+		Click the button below to get all the new posts and put them on the site.
+		<%= button_to "Update feeds!", { controller: :posts, action: :updatefeeds } , method: :put, class: "btn", id: "update-feeds-button" %>
 	</div>
 </div>

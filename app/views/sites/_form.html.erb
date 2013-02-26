@@ -1,15 +1,15 @@
 <%= form_for @site do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
 
-	<%= f.label :name %>
-	<%= f.text_field :name, value: params[:name] %>
+	<%= f.label :name, class: "standard-input" %>
+	<%= f.text_field :name, value: params[:name], class: "standard-input" %>
 
-	<%= f.label :url %>
-	<%= f.text_field :url, value: params[:url] %>
+	<%= f.label :url, class: "standard-input" %>
+	<%= f.text_field :url, value: params[:url], class: "standard-input" %>
 
-	<%= f.label :rss %>
-	<%= f.text_field :rss, value: params[:rss] %>
+	<%= f.label :rss, class: "standard-input" %>
+	<%= f.text_field :rss, value: params[:rss], class: "standard-input" %>
 	<br />
-	<%= f.submit "Add Site!" %>
+	<%= f.submit "Add Site!", class: "btn", id: "site-submit-button" %>
 
 <% end %>
