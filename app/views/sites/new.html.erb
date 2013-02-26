@@ -1,13 +1,19 @@
 <% provide(:title, 'Management') %>
 
-<%= button_to "Update feeds!", {controller: :posts, action: :updatefeeds} , method: :put %>
+<div class="management-wrapper">
+	<div class="container" id="addsite-container">
 
-<a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://<%= "#{request.host}:#{request.port}" %>/sites/bookmarklet';})();" onclick="alert('Drag this link to your bookmarks bar to create a bookmarklet'); return false;">Bookmarklet</a>
+	<%= image_tag "add-site-header.png", class: "header-txt-image" %>
 
-<div class="container" id="main-container">
+	<%= render 'form' %>
 
-<%= image_tag "add-site-header.png", class: "header-txt-image" %>
+	</div>
 
-<%= render 'form' %>
+	<div class="container", id="update-feeds-container">
+		<a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://<%= "#{request.host}:#{request.port}" %>/sites/bookmarklet';})();" onclick="alert('Drag this link to your bookmarks bar to create a bookmarklet'); return false;">Bookmarklet</a>
+	</div>
 
+	<div class="container", id="update-feeds-container">
+		<%= button_to "Update feeds!", { controller: :posts, action: :updatefeeds } , method: :put %>
+	</div>
 </div>

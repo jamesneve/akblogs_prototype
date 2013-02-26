@@ -1,5 +1,14 @@
 @import "bootstrap";
 
+@mixin pretty-container {
+	background-color: #ffffff;
+	border: 4px solid #dfdfdf;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	padding: 10px;
+}
+
 body {
 	padding-top: 60px;
 }
@@ -61,12 +70,7 @@ a {
 }
 
 #main-container {
-	background-color: #ffffff;
-	border: 4px solid #dfdfdf;
-	border-radius: 20px;
-	-moz-border-radius: 20px;
-	-webkit-border-radius: 20px;
-	padding: 10px
+	@include pretty-container;
 }
 
 .header-txt-image {
@@ -130,6 +134,25 @@ a {
 .postauthor {
 	font-weight: bold;
 	color: #b668cc;
+}
+
+/* Management Page */
+
+.management-wrapper {
+	width: 800px;
+	margin: 0 auto;
+}
+
+#addsite-container {
+	@include pretty-container;
+	float: left;
+	width: 400px;
+}
+
+#update-feeds-container {
+	@include pretty-container;
+	float: right;
+	width: 300px;
 }
 
 /* Pagination */

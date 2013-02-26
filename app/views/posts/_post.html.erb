@@ -14,6 +14,6 @@
 			<%= (Nokogiri::HTML(post.content).xpath("//text()").to_s).truncate(30) %>
 		</div>
 		<span class="postdate-published"><%= post.published_on.strftime('%a %d/%m') %></span>
-		<span class="postauthor"><%= post.author %></span>
+		<span class="postauthor"><%= post.site.name.truncate(10) %></span>
 	</div>
 </div>
