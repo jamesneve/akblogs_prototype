@@ -149,6 +149,12 @@ a {
 	width: 400px;
 }
 
+#bookmarklet-container {
+	@include pretty-container;
+	float: right;
+	width: 300px;
+}
+
 #update-feeds-container {
 	@include pretty-container;
 	float: right;
