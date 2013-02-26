@@ -13,8 +13,13 @@ class SitesController < ApplicationController
   def create
   	@site = Site.new(params[:site])
   	if @site.save
-  		flash[:success] = "Site added to directory successfully!"
-  		redirect_to sites_path
+
+      if @site.getFeedEntries
+  		  flash[:success] = "Site added to directory successfully!"
+      else
+        flash[:success] = "Site added successfully, but there was a problem fetching posts. Please click 'Update Feeds' to see the new posts."
+  		end
+      redirect_to sites_path
   	else
   		render 'new'
   	end
