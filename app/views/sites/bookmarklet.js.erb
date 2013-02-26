@@ -28,19 +28,23 @@
     i = 0;
 
     while (link = links[i]) {
+      // Check if the link points at an RSS Feed
       linkType = link.getAttribute("type");
       linkRel = link.getAttribute("rel");
       if (linkType && linkType.match(/[\+\/]xml$/) && linkRel && linkRel === "alternate") {
         feedURL = link.getAttribute("href");
+        // Ensure the URL is in a form that Feedzirra can use
         if (feedURL.indexOf("http") !== 0) {
           feedURL = this.formatURL(feedURL, document);
         }
+        // Send the user to AKBlogs
         this.addURL(feedURL);
         feedExists = true;
         break;
       }
       i++;
     }
+    // If no feed was found, the user fills in the feed
     if (!feedExists) {
       return this.addURL("");
     }

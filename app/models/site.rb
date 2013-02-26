@@ -27,9 +27,11 @@ class Site < ActiveRecord::Base
 		feed.entries.each do |entry|
 		  unless Post.exists?(published_on: entry.published)
 
+		  	# The content can end up in either 'content' or 'summary'
 		    content = entry.content
 		    content = entry.summary if content.blank?
 
+		    # Find the first image bigger than 100x100 in the post
 		    image_url = nil
 		    images = Nokogiri::HTML(content).css('img').map{ |i| i['src'] }
 		    images.each do |image|
@@ -40,6 +42,8 @@ class Site < ActiveRecord::Base
 		      end
 		    end
 
+		    # If there's a suitable image, use that
+		   	# Otherwise, the view will use the default
 		    if image_url
 		      newPost = self.posts.build(title: entry.title,
 		          remote_image_url: image_url,
