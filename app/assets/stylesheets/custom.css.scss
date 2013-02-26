@@ -164,6 +164,10 @@ a {
 	width: 335px;
 }
 
+.feed-update-successful {
+	color: #b668cc;
+}
+
 #addsite-container {
 	@include pretty-container;
 	float: left;
@@ -201,6 +205,11 @@ a {
 
 #update-feeds-header {
 	@include mini-header;
+}
+
+#spinner {
+	margin-top: 40px;
+	text-align: center;
 }
 
 /* Pagination */

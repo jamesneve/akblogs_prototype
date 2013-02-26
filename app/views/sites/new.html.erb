@@ -20,6 +20,7 @@
 	<div class="container", id="update-feeds-container">
 		<%= image_tag "update-feeds-header.png", class: "header-txt-image", id: "update-feeds-header" %>
 		Click the button below to get all the new posts and put them on the site.
-		<%= button_to "Update feeds!", { controller: :posts, action: :updatefeeds } , method: :put, class: "btn", id: "update-feeds-button" %>
+		<%= button_to "Update feeds!", { controller: :posts, action: :updatefeeds } , method: :put, class: "btn", id: "update-feeds-button", remote: true %>
+		<div id="spinner"></div>
 	</div>
 </div>

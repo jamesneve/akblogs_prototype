@@ -49,13 +49,18 @@ class PostsController < ApplicationController
 	  	end
   	end
 
-  	if updateSuccessful
-  		flash[:success] = "All feeds updated successfully!"
-  	else
-  		flash[:error] = "There was a problem updating some feeds"
-  	end
-
-  	redirect_to posts_path
+    if updateSuccessful
+      respond_to do |format| 
+        format.js
+        format.html do 
+          flash[:success] = "All feeds updated successfully!"
+          redirect_to posts_url
+        end
+      end
+    else
+      flash[:error] = "There was a problem updating some feeds"
+      redirect_to posts_url
+    end
 
   end
 end
