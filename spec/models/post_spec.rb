@@ -5,11 +5,12 @@
 #  id           :integer          not null, primary key
 #  title        :string(255)
 #  image        :string(255)
-#  content      :text
 #  site_id      :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  published_on :datetime
+#  entry_url    :string(255)
+#  content      :text
 #
 
 require 'spec_helper'

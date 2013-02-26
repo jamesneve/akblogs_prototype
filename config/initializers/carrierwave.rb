@@ -1,8 +1,8 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
-    :provider               => 'AWS',                        # required
-    :aws_access_key_id      => 'AKIAIAEMYVZBH2QDZARA',                        # required
-    :aws_secret_access_key  => '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',                        # required
+    :provider               => 'AWS',
+    :aws_access_key_id      => 'AKIAIAEMYVZBH2QDZARA',
+    :aws_secret_access_key  => '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',
   }
-  config.fog_directory  = 'fh-thumbnails'                     # required
+  config.fog_directory  = 'fh-thumbnails'
 end

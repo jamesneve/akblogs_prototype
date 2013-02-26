@@ -11,16 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130225162905) do
+ActiveRecord::Schema.define(:version => 20130226081541) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.string   "image"
-    t.text     "content"
     t.integer  "site_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.datetime "published_on"
+    t.string   "entry_url"
+    t.text     "content"
   end
 
   add_index "posts", ["published_on"], :name => "index_posts_on_published_on"

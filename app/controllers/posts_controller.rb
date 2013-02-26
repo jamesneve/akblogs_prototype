@@ -6,10 +6,6 @@ class PostsController < ApplicationController
   	respond_with @posts
   end
 
-  def show
-  	respond_with(@post = Post.find(params[:id]))
-  end
-
   def updatefeeds
   	updateSuccessful = true
 
@@ -22,9 +18,13 @@ class PostsController < ApplicationController
 	  				content = entry.content
 	  				content = entry.summary if content.blank?
 
+            nokContent = Nokogiri::HTML(content)
+            image_url = (nokContent.css('img').map{ |i| i['src'] })[0]
+
 	  				newPost = site.posts.build(title: entry.title,
-	  						remote_image_url: "http://i104.photobucket.com/albums/m188/Neve_itsovernow/file_zps904db52b.jpg",
+	  						remote_image_url: image_url,
 	  						content: content,
+                entry_url: entry.url,
 	  						published_on: entry.published)
 	  				updateSuccessful = false unless newPost.save
 	  			end

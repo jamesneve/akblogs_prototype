@@ -1,23 +1,26 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
-gem 'bootstrap-sass'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'jquery-rails'
+gem 'bootstrap-sass'					# CSS Library
+gem 'feedzirra'							# Parsing RSS Feeds
+gem 'bootstrap-will_paginate'			# Pagination
+gem 'rmagick'							# Image Processing
+gem 'carrierwave'						# Image Uploading
+gem 'fog'								# Amazon S3 Interface
 
 group :development, :test do
 	gem 'sqlite3'
-	gem 'rspec-rails'
-	gem 'factory_girl_rails'
-	gem 'capybara'
+	gem 'rspec-rails'					# Testing
+	gem 'factory_girl_rails'			# Insert data into test DB
+	gem 'capybara'						# Testing
 end
 
 group :development do
-	gem 'better_errors'
-	gem 'binding_of_caller'
-	gem 'meta_request'
-	gem 'annotate'
+	gem 'better_errors'					# Better Error Pages
+	gem 'binding_of_caller'				# Better Error Pages
+	gem 'meta_request'					# For Chrome Extension
+	gem 'annotate'						# Annotate Models
 end
 
 group :assets do
@@ -26,28 +29,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-gem 'feedzirra'
-gem 'bootstrap-will_paginate'
-gem 'rmagick'
-gem 'carrierwave'
-gem 'fog'
-
 group :production do
-	gem 'pg'
+	gem 'pg'							# For Heroku
 end
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
