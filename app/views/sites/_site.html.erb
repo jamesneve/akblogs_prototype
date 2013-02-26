@@ -6,6 +6,6 @@
 	<div class="site-url"><strong>URL:</strong> <%= link_to url, url %></div>
 	<div class="rss-feed"><strong>RSS feed:</strong> <%= link_to site.rss, site.rss %></div>
 	<div class="edit-links">
-		<%= link_to "Edit", "#" %> | <%= link_to "Delete", site, method: :delete, data: { confirm: "Are you sure?" } %>
+		<%= link_to "Edit", edit_site_url(site) %> | <%= link_to "Delete", site, method: :delete, data: { confirm: "Are you sure?" } %>
 	</div>
 </div>

@@ -41,6 +41,12 @@ a {
 	color: rgb(219, 54, 219);
 }
 
+#error_explanation {
+	color: #ff0000;
+	margin-left: 25px;
+	width: 90%;
+}
+
 /* Header */
 
 .banner {
@@ -176,22 +182,22 @@ a {
 	@include pretty-container;
 	float: left;
 	width: 400px;
-	height: 400px;
 }
 
 #bookmarklet-container {
 	@include pretty-container;
 	float: right;
 	width: 300px;
-	height: 181px;
+	height: 168px;
 	text-align: center;
 	margin-bottom: 10px;
 }
 
 #update-feeds-container {
 	@include pretty-container;
-	height: 181px;
+	height: 168px;
 	float: right;
+	text-align: center;
 	width: 300px;
 }
 

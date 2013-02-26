@@ -2,14 +2,14 @@
 	<%= render 'shared/error_messages', object: f.object %>
 
 	<%= f.label :name, class: "site-input" %>
-	<%= f.text_field :name, value: params[:name], class: "site-input site-text" %>
+	<%= f.text_field :name, value: (params[:name].nil? ? @site.name : params[:name]), class: "site-input site-text" %>
 
 	<%= f.label :url, class: "site-input" %>
-	<%= f.text_field :url, value: params[:url], class: "site-input site-text" %>
+	<%= f.text_field :url, value: (params[:url].nil? ? @site.url : params[:url]), class: "site-input site-text" %>
 
 	<%= f.label :rss, class: "site-input" %>
-	<%= f.text_field :rss, value: params[:rss], class: "site-input site-text" %>
+	<%= f.text_field :rss, value: (params[:rss].nil? ? @site.rss : params[:rss]), class: "site-input site-text" %>
 	<br />
-	<%= f.submit "Add Site!", class: "btn", id: "site-submit-button" %>
+	<%= f.submit "Submit!", class: "btn", id: "site-submit-button" %>
 
 <% end %>

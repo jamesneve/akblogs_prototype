@@ -31,4 +31,19 @@ class SitesController < ApplicationController
     flash[:success] = "Site deleted"
     redirect_to sites_url
   end
+
+  def edit
+    respond_with(@site = Site.find(params[:id]))
+  end
+
+  def update
+    @site = Site.find(params[:id])
+    if @site.update_attributes(params[:site])
+      flash[:success] = "Site updated!"
+      redirect_to sites_path
+    else
+      render 'edit'
+    end
+  end
+
 end
