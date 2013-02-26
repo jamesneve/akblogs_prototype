@@ -13,11 +13,13 @@
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :content, :image, :title, :published_on
+  attr_accessible :content, :image, :title, :published_on, :remote_image_url
 
   validates :image, presence: true
   validates :title, presence: true
   validates :site_id, presence: true
 
   belongs_to :site
+
+  mount_uploader :image, ThumbnailUploader
 end

@@ -29,6 +29,9 @@ end
 gem 'jquery-rails'
 gem 'feedzirra'
 gem 'bootstrap-will_paginate'
+gem 'rmagick'
+gem 'carrierwave'
+gem 'fog'
 
 group :production do
 	gem 'pg'
