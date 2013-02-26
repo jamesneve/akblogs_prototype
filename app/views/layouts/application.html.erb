@@ -2,11 +2,18 @@
 <html>
 <head>
   <title>AKBlogs | <%= yield(:title) %></title>
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
   <%= yield :head %>
   <%= render 'layouts/shim' %>
+
+  <meta name="rating" content="general">
+  <meta name="robots" content="">
+  <meta name="content-language" content="en">
+  <meta name="description" content="AKB48 Member Blogs">
 </head>
 <body>
 	<%= render 'layouts/header' %>

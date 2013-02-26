@@ -28,12 +28,20 @@ class PostsController < ApplicationController
               end
             end
 
-	  				newPost = site.posts.build(title: entry.title,
-	  						remote_image_url: image_url,
-	  						content: content,
-                entry_url: entry.url,
-                author: entry.author,
-	  						published_on: entry.published)
+            if image_url
+  	  				newPost = site.posts.build(title: entry.title,
+  	  						remote_image_url: image_url,
+  	  						content: content,
+                  entry_url: entry.url,
+                  author: entry.author,
+  	  						published_on: entry.published)
+            else
+              newPost = site.posts.build(title: entry.title,
+                  content: content,
+                  entry_url: entry.url,
+                  author: entry.author,
+                  published_on: entry.published)
+            end
 	  				updateSuccessful = false unless newPost.save
 	  			end
 	  		end

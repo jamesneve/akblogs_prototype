@@ -1,5 +1,9 @@
 <p>
-	<%= image_tag post.image_url.to_s %>
+	<% if post.image_url %>
+		<%= image_tag post.image_url.to_s %>
+	<% else %>
+		<%= image_tag 'default-post-image.jpg' %>
+	<% end %>
 	<%= link_to post.title, post.entry_url, target: '_blank' %><br />
 	<% if post.content && post.content.length > 200 %>
 		<%= (Nokogiri::HTML(post.content).xpath("//text()").to_s).truncate(30) %>

@@ -36,14 +36,14 @@ describe Post do
 
 	it { should be_valid }
 
-	describe "should have an image" do
-		before { @post.image = " " }
+	describe "should have a title" do
+		before { @post.title = " " }
 
 		it { should_not be_valid }
 	end
 
-	describe "should have a title" do
-		before { @post.title = " " }
+	describe "should have some content" do
+		before { @post.content = " " }
 
 		it { should_not be_valid }
 	end

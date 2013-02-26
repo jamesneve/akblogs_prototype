@@ -8,14 +8,14 @@ describe "Site pages" do
 		let!(:site) { FactoryGirl.create(:site) }
 		before { visit sites_path }
 
-		it { should have_selector('h2', text: "Sites") }
+		it { find('title').native.text.should == "AKBlogs | Sites" }
 		it { should have_content(site.name) }
 	end
 
 	describe "new page" do
 		before { visit new_site_path }
 
-		it { should have_selector('h2', text: "Add Site") }
+		it { find('title').native.text.should == "AKBlogs | Management" }
 
 		describe "with invalid information" do
 			it "should not create a site" do
@@ -43,7 +43,7 @@ describe "Site pages" do
 			describe "should go to the next page" do
 				before { click_button "Add Site!" }
 
-				it { should have_content("Sites") }
+				it { find('title').native.text.should == "AKBlogs | Sites" }
 			end
 		end
 	end
