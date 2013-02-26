@@ -17,5 +17,5 @@ class Site < ActiveRecord::Base
   validates :rss, presence: true, uniqueness: true
   validates :url, presence: true
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
 end

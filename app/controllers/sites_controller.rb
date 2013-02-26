@@ -25,4 +25,10 @@ class SitesController < ApplicationController
       format.js { render 'bookmarklet' }
     end
   end
+
+  def destroy
+    Site.find(params[:id]).destroy
+    flash[:success] = "Site deleted"
+    redirect_to sites_url
+  end
 end

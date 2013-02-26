@@ -10,6 +10,12 @@ describe "Site pages" do
 
 		it { find('title').native.text.should == "AKBlogs | Sites" }
 		it { should have_content(site.name) }
+
+		describe "clicking delete link" do
+			it "should destroy the site" do
+				expect { click_link "Delete" }.to change(Site, :count).by(-1)
+			end
+		end
 	end
 
 	describe "new page" do
