@@ -18,8 +18,15 @@ class PostsController < ApplicationController
 	  				content = entry.content
 	  				content = entry.summary if content.blank?
 
-            nokContent = Nokogiri::HTML(content)
-            image_url = (nokContent.css('img').map{ |i| i['src'] })[0]
+            image_url = nil
+            images = Nokogiri::HTML(content).css('img').map{ |i| i['src'] }
+            images.each do |image|
+              dim = FastImage.size(image)
+              if dim[0] >= 150 && dim[1] >= 150
+                image_url = image
+                break
+              end
+            end
 
 	  				newPost = site.posts.build(title: entry.title,
 	  						remote_image_url: image_url,

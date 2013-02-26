@@ -8,6 +8,7 @@ gem 'bootstrap-will_paginate'			# Pagination
 gem 'rmagick'							# Image Processing
 gem 'carrierwave'						# Image Uploading
 gem 'fog'								# Amazon S3 Interface
+gem 'fastimage'							# Get image sizes
 
 group :development, :test do
 	gem 'sqlite3'

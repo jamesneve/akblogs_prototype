@@ -73,6 +73,7 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    fastimage (1.2.13)
     feedzirra (0.0.31)
       activesupport (>= 3.0.8)
       builder (~> 3.0.0)
@@ -205,6 +206,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   factory_girl_rails
+  fastimage
   feedzirra
   fog
   jquery-rails
