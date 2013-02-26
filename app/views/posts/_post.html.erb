@@ -1,13 +1,19 @@
-<p>
-	<% if post.image_url %>
-		<%= image_tag post.image_url.to_s %>
-	<% else %>
-		<%= image_tag 'default-post-image.jpg' %>
-	<% end %>
-	<%= link_to post.title, post.entry_url, target: '_blank' %><br />
-	<% if post.content && post.content.length > 200 %>
-		<%= (Nokogiri::HTML(post.content).xpath("//text()").to_s).truncate(30) %>
-	<% else %>
-		<%= Nokogiri::HTML(post.content).xpath("//text()").to_s %>
-	<% end %>
-</p>
+<div class="post">
+	<div class="postimage-container">
+		<% if post.image_url %>
+			<%= image_tag post.image_url.to_s, class: "postimage" %>
+		<% else %>
+			<%= image_tag 'default-post-image.jpg', class: "postimage" %>
+		<% end %>
+	</div>
+	<div class="posttext">
+		<div class="posttitle">
+			<%= link_to post.title, post.entry_url, target: '_blank' %><br />
+		</div>
+		<div class="postsummary">
+			<%= (Nokogiri::HTML(post.content).xpath("//text()").to_s).truncate(30) %>
+		</div>
+		<span class="postdate-published"><%= post.published_on.strftime('%a %d/%m') %></span>
+		<span class="postauthor"><%= post.author %></span>
+	</div>
+</div>

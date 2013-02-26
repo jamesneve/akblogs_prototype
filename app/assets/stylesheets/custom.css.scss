@@ -89,6 +89,49 @@ a {
 	font-size: 18px;
 }
 
+/* Post Index */
+
+.post {
+	height: 110px;
+}
+
+.posttext {
+	padding-top: 25px
+}
+
+.postimage-container {
+	width: 120px;
+	float: left;
+	line-height: 110px;
+}
+
+.postimage {
+	padding: 2px;
+	border: 1px solid #aaaaaa;
+}
+
+.posttitle {
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+.postsummary {
+	color: #888888;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.postdate-published {
+	font-weight: bold;
+	color: #73ccff;
+	margin-right: 5px;
+}
+
+.postauthor {
+	font-weight: bold;
+	color: #b668cc;
+}
+
 /* Pagination */
 
 .pagination {
