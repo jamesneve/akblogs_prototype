@@ -4,3 +4,4 @@ This is an example feed aggregator app for AKB48 member blogs. Feel free to brow
 It's mostly intended as a proof-of-concept, so various aspects such as caching and scaling are missing.
 A more sophisticated version is currently in development in a private repo.
 An example of this app is running on http://akblogs.herokuapp.com
+Excuse the incredible amount of pink ^^;
