@@ -1,3 +1,5 @@
-== Mirai Inc Application App
+== Demonstration App
 
-This is the doll.fm 'clone' for my application to Mirai Inc.
+This is an example feed aggregator app for AKB48 member blogs. Feel free to browse the code. 
+A more sophisticated version is currently in development in a private repo.
+An example is running on http://akblogs.herokuapp.com/
