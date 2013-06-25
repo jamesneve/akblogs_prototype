@@ -1,5 +1,6 @@
 == Demonstration App
 
-This is an example feed aggregator app for AKB48 member blogs. Feel free to browse the code. 
+This is an example feed aggregator app for AKB48 member blogs. Feel free to browse the code.
+It's mostly intended as a proof-of-concept, so various aspects such as caching and scaling are missing.
 A more sophisticated version is currently in development in a private repo.
-An example is running on http://akblogs.herokuapp.com/
+An example of this app is running on http://akblogs.herokuapp.com
